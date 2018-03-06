@@ -1,16 +1,16 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
-@using (Html.BeginForm("bookData","Login",FormMethod.Post))
+@using (Html.BeginForm("UserLogin","User",FormMethod.Post))
 {
 <div id="LoginBox" class="">
     <form>
         <fieldset>
     <legend>Login</legend>
-    name:<br>
-    <input type="text" name="name" autocomplete="on" ><br>
-    Password:<br>
-    <input type="password" name="password" ><br><br>
+    UserName:<br>
+    @Html.TextBox("userName")
+    <br>Password:<br>
+    @Html.TextBox("password")     
     <input type="submit" value="Submit">
   </fieldset>
     </form>

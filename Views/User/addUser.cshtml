@@ -1,0 +1,20 @@
+@model songProject.Models.User
+
+   @using (Html.BeginForm("addUser","User",FormMethod.Post))
+{
+
+<div>
+    Title:
+    @Html.TextBoxFor(model => model.title)
+    Author:
+    @Html.TextBoxFor(model => model.author)
+    type:
+    @Html.TextBoxFor(model => model.type)
+    published year:
+    @Html.TextBoxFor(model => model.publishedYear)
+    Summry:
+    @Html.TextBoxFor(model => model.summary)
+    <button type="submit" >add</button>
+</div>
+
+}
