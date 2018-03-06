@@ -1,0 +1,25 @@
+@model songProject.Models.Book
+@{
+    ViewData["Title"] = "Contact";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
+   
+   @using (Html.BeginForm("addBook","Book",FormMethod.Post))
+{
+
+<div>
+    Title:
+    @Html.TextBoxFor(model => model.title)
+    Author:
+    @Html.TextBoxFor(model => model.author)
+    type:
+    @Html.TextBoxFor(model => model.type)
+    published year:
+    @Html.TextBoxFor(model => model.publishedYear)
+    Summry:
+    @Html.TextBoxFor(model => model.summary)
+    <button type="submit" >add</button>
+</div>
+
+}

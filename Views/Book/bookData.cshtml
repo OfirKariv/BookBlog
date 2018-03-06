@@ -1,0 +1,17 @@
+@model songProject.Models.Book
+
+
+   
+   @using (Html.BeginForm("bookData","Book",FormMethod.Post))
+{
+    <div>
+    Title:
+    @Html.TextBox("name")
+    <button type="submit" >search</button>
+</div>
+
+<div>@ViewData["book"]</div>
+
+
+
+}

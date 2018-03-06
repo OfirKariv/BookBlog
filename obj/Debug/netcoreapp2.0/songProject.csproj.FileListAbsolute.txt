@@ -1,0 +1,10 @@
+C:\Users\DELL\Desktop\cloud\songProject\bin\Debug\netcoreapp2.0\songProject.deps.json
+C:\Users\DELL\Desktop\cloud\songProject\bin\Debug\netcoreapp2.0\songProject.runtimeconfig.json
+C:\Users\DELL\Desktop\cloud\songProject\bin\Debug\netcoreapp2.0\songProject.runtimeconfig.dev.json
+C:\Users\DELL\Desktop\cloud\songProject\bin\Debug\netcoreapp2.0\songProject.dll
+C:\Users\DELL\Desktop\cloud\songProject\bin\Debug\netcoreapp2.0\songProject.pdb
+C:\Users\DELL\Desktop\cloud\songProject\obj\Debug\netcoreapp2.0\songProject.csproj.CoreCompileInputs.cache
+C:\Users\DELL\Desktop\cloud\songProject\obj\Debug\netcoreapp2.0\songProject.AssemblyInfoInputs.cache
+C:\Users\DELL\Desktop\cloud\songProject\obj\Debug\netcoreapp2.0\songProject.AssemblyInfo.cs
+C:\Users\DELL\Desktop\cloud\songProject\obj\Debug\netcoreapp2.0\songProject.dll
+C:\Users\DELL\Desktop\cloud\songProject\obj\Debug\netcoreapp2.0\songProject.pdb
