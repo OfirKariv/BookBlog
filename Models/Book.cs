@@ -8,8 +8,8 @@ namespace songProject.Models
         public string author{get;set;}
         public string type{get;set;}//comedy,drama, fantasy,....
         public string summary{get;set;}
-
         public string publishedYear{get;set;}
+        public string image {get;set;}
     }
 
 

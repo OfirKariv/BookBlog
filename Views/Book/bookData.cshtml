@@ -1,7 +1,7 @@
 @model songProject.Models.Book
 
 
-   
+<!--   
    @using (Html.BeginForm("bookData","Book",FormMethod.Post))
 {
     <div>
@@ -13,5 +13,34 @@
 <div>@ViewData["book"]</div>
 
 
+}
+-->
+  @using (Html.BeginForm("bookData","Book",FormMethod.Post))
+{
+
+
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
+<body>
+
+    <div>
+    Title:
+    @Html.TextBox("name")
+    <button type="submit" >search</button>
+</div>
+
+
+<section>  
+    
+   <div> <img class="image" src=@ViewData["image"] style="width:25%"> </div>
+    <h2 class="w3-wide">@ViewData["title"]</h2>
+    <p class="w3-opacity"><i>@ViewData["author"]</i></p>
+    <p class="w3-opacity"><i>@ViewData["year"]</i></p>
+    <p class="w3-opacity"><i>@ViewData["summery"]</i></p>
+</section>
+
+</body>
 
 }

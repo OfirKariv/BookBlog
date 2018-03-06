@@ -1,19 +1,26 @@
 @model songProject.Models.User
+@{
+    ViewData["Title"] = "Contact";
+}
+<h2>@ViewData["Title"]</h2>
+<h3>@ViewData["Message"]</h3>
 
    @using (Html.BeginForm("addUser","User",FormMethod.Post))
 {
 
 <div>
-    Title:
-    @Html.TextBoxFor(model => model.title)
-    Author:
-    @Html.TextBoxFor(model => model.author)
-    type:
+    username:
+    @Html.TextBoxFor(model => model._id)
+    password:
+    @Html.TextBoxFor(model => model.password)
+    first name:
+    @Html.TextBoxFor(model => model.firstname)
+    last name:
+    @Html.TextBoxFor(model => model.lastname)
+    Age:
+    @Html.TextBoxFor(model => model.age)
+    Type:
     @Html.TextBoxFor(model => model.type)
-    published year:
-    @Html.TextBoxFor(model => model.publishedYear)
-    Summry:
-    @Html.TextBoxFor(model => model.summary)
     <button type="submit" >add</button>
 </div>
 

@@ -37,6 +37,8 @@ namespace songProject.Controllers
         }
 
         public IActionResult addUser(User user){
+             Console.WriteLine("in add user");
+
             var res=CreateUser(user);
             return View();
         }

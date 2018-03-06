@@ -38,7 +38,14 @@ namespace songProject.Controllers
 
             Book book= getBookFromDB(name).Result;
             //if (book._id!=null){
-                ViewData["Book"]=book.summary;
+                ViewData["title"]=book.title;
+                ViewData["author"]=book.author;
+                ViewData["year"]=book.publishedYear;
+                ViewData["type"]=book.type;
+                ViewData["summary"]=book.summary;
+                ViewData["image"]=book.image;
+
+                
               //  return View(book);
           //  }
             //else
