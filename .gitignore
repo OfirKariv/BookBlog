@@ -1,4 +1,4 @@
-  bin/Debug/netcoreapp2.0/songProject.dll
-        bin/Debug/netcoreapp2.0/songProject.pdb
-        obj/Debug/netcoreapp2.0/songProject.dll
-        obj/Debug/netcoreapp2.0/songProject.pdb
+        bin/Debug/*
+        bin/Debug/
+        obj/*
+        
