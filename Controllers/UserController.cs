@@ -19,10 +19,22 @@ namespace songProject.Controllers
         {
             //get the user drom DB
             User u=getUserFromDB(userName).Result;
+            if (u.type.Equals("Admin")){
+                // for different Layout
+                return RedirectToAction("AdminIndex","User",u);
+            }
             Console.WriteLine("in index user controller:"+u._id);
             
-            ViewData["1"]=u._id;
+            ViewData["userName"]=u._id;
+            
            
+            return View();
+        }
+
+        public IActionResult AdminIndex(User u){
+            
+            ViewData["userName"]=u._id;
+
             return View();
         }
 

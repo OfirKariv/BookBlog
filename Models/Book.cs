@@ -10,7 +10,10 @@ namespace songProject.Models
         public string summary{get;set;}
         public string publishedYear{get;set;}
         public string image {get;set;}
-    }
+        public string price {get;set;}
+        public int soldCount{get;set;}
+        public string content{get;set;}// url ///the story!!
+    }                                   
 
 
 

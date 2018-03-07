@@ -19,7 +19,8 @@ namespace songProject.Controllers
         {
             return View();
         }
-         
+
+
         public IActionResult getBooks(){
             Console.WriteLine("in get books");
              List<Book> list=getAllBookFromDB().Result;
@@ -38,9 +39,8 @@ namespace songProject.Controllers
     //to get all books
      public async  Task<List<Book>> getAllBookFromDB() {
             
-            var hc = Helpers.CouchDBConnect.GetClient("books/");
+            var hc = Helpers.CouchDBConnect.GetClient("store");
             var response = await hc.GetAsync(hc.BaseAddress);
-           
             var jsonobject=await response.Content.ReadAsStringAsync();
             var books= JsonConvert.DeserializeObject<List<Book>>(jsonobject);
          //   Console.WriteLine(jsonobject);
@@ -51,8 +51,50 @@ namespace songProject.Controllers
             }
 
 
+    public async  Task<List<User>> getUsersListFromDB() {
+            
+            var hc = Helpers.CouchDBConnect.GetClient("store");
+            var response = await hc.GetAsync(hc.BaseAddress);
+            var jsonobject=await response.Content.ReadAsStringAsync();
+            var users= JsonConvert.DeserializeObject<List<User>>(jsonobject);
+         //   Console.WriteLine(jsonobject);
+            Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            Console.WriteLine(users);
+            Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            return users;
+            }
+    public IActionResult updateUsersList(string username)
+    {
+        var users =getUsersListFromDB().Result;
+        if(users == null)
+        //Error
+        foreach (User u in users)
+        {
+         if(u._id.Equals(username))
+         return View();       
+        }
+       // UpdateStore();
+        {}
+
+        return View();
 
     }
-}
 
-        
+        //===========================================================
+        //=========Store CRUD======================================== 
+        //===========================================================
+
+
+        /*
+        public async Task<Boolean> UpdateStore([FromBody] Store s)
+        {
+            
+            var hc = Helpers.CouchDBConnect.GetClient("store");
+            string json = JsonConvert.SerializeObject(s);
+
+
+            return false;
+        }
+        */
+    }
+}

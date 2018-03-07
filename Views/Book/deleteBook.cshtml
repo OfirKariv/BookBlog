@@ -1,0 +1,17 @@
+@model songProject.Models.Book
+@{
+
+Layout = "_MainLayout";
+
+} 
+
+  @using (Html.BeginForm("deleteBook","Book",FormMethod.Post))
+  {
+   <div>
+    Title:
+    @Html.TextBox("id")
+    <button type="submit" >search</button>
+</div>
+
+
+  }

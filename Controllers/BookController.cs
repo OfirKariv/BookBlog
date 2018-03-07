@@ -44,8 +44,8 @@ namespace songProject.Controllers
                 ViewData["type"]=book.type;
                 ViewData["summary"]=book.summary;
                 ViewData["image"]=book.image;
-
-                
+                ViewData["price"]=book.price;
+               
               //  return View(book);
           //  }
             //else
@@ -59,6 +59,15 @@ namespace songProject.Controllers
             ViewData["Message"] = "Your contact page.";
 
             return View();
+        }
+
+        public IActionResult deleteBook(string id)
+        {
+         Console.WriteLine("IM IN DELETE 11111111111111111111111111111111111111111111111111111111111");   
+        if(DeleteFromDB(id).Result)
+        return View();
+        else
+        return Error();
         }
 
         public IActionResult Error()
@@ -99,16 +108,39 @@ namespace songProject.Controllers
             var book= JsonConvert.DeserializeObject<Book>(jsonobject);
          //   Console.WriteLine(jsonobject);
             Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            Console.WriteLine(book.title);
+            Console.WriteLine(book);
             Console.WriteLine("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             return book;
             }
+
+        public async Task<string> getRevById(string id){
+            Console.WriteLine("#######################3in rev by id################################33");
+             var hc = Helpers.CouchDBConnect.GetClient("books");
+            var response = await hc.GetAsync("books/"+id);
+            string jsonobject=await response.Content.ReadAsStringAsync();
+            var res= JsonConvert.DeserializeObject<Dictionary<string,string>>(jsonobject); 
+            string rev=res["_rev"];
+            Console.WriteLine(rev);
+            return rev;
+        }
 
     //Update
 
 
     //Delete
+     public async Task<Boolean> DeleteFromDB(string id)
+        {
 
+            string rev=getRevById(id).Result;
+            string st=id+"?rev="+rev;
+            //String st="Lady GAGA?rev=1-73a9ed3c5aca2a02fabbf0da2c9410cd";/// songid?rev=songrev
+            Console.WriteLine("im in delete");
+                var hc = Helpers.CouchDBConnect.GetClient("books");
+                var response= await hc.DeleteAsync(hc.BaseAddress+"/"+st);
+                Console.WriteLine(response);
+                Console.WriteLine(hc.BaseAddress+"/"+st);
+            return true;
+        }
 
 
     }
